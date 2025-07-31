@@ -9,11 +9,29 @@ def ola_mundo():
     "</br>" \
     "<a href='/perfil/socorro'>Perfil</a>" \
     "</br>" \
-    "<a href='/produto/26'>Produto</a>"
+    "<a href='/produto/26'>Produto</a>" \
+    "</br>" \
+    "<a href='/hobby'>Hobby</a>" \
+    "</br>" \
+    "<a href='/filme'>Filme</a>" \
+    "</br>" \
+    "<a href='/musica'>Música</a>" \
 
 @app.route("/sobre")
 def sobre():
     return "<h3>Está é a página sobre</h3>"
+
+@app.route("/hobby")
+def hobby():
+    return "<h3>Jogar jogos eletrônicos em um computador pessoal</h3>"
+
+@app.route("/filme")
+def filme():
+    return "<h2>Ainda estou aqui</h2>"
+
+@app.route("/musica")
+def musica():
+    return "<h1>Construção - Chico Buarque</h1>"
 
 @app.route("/perfil/<usuario>")
 def perfil(usuario):
