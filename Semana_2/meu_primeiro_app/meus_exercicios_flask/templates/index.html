@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Tarefas{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Minhas Tarefas</h2>
+
+<!-- Adicionar nova tarefa -->
+<form method="POST" action="/adicionar" class="form-add">
+    <input type="text" name="descricao" placeholder="Digite uma nova tarefa" required>
+    <button type="submit">Adicionar Tarefa</button>
+</form>
+
+<!-- Lista de tarefas -->
+<ul class="tarefas-lista">
+    {% for tarefa in tarefas %}
+        <li>
+            <!-- Exibe a tarefa com ou sem risco -->
+            <span class="tarefa-texto {% if tarefa.concluida %}tarefa-concluida{% endif %}">
+                {{ tarefa.descricao }}
+            </span>
+
+            <!-- Botão "Concluir" só aparece se a tarefa não estiver concluída -->
+            {% if not tarefa.concluida %}
+                <form method="POST" action="/concluir/{{ tarefa.id }}" class="form-acao">
+                    <button type="submit" class="concluir">Concluir</button>
+                </form>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<!-- Mensagem se não houver tarefas -->
+{% if tarefas|length == 0 %}
+    <p class="sem-tarefas">Nenhuma tarefa cadastrada.</p>
+{% endif %}
+
+{% endblock %}
