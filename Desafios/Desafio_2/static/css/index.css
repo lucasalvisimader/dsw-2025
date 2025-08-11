@@ -1,0 +1,82 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    color: #042327ff;
+}
+
+/* Formulário de adicionar tarefa */
+.form-add {
+    margin-bottom: 2rem;
+}
+
+.form-add input[type="text"] {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-add button {
+    padding: 0.5rem;
+    background-color: rgb(7, 58, 65);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-add button:hover {
+    background-color: #031a1e;
+}
+
+/* Lista de tarefas */
+.tarefas-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.tarefas-lista li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tarefas-lista .tarefa-texto {
+    color: #333;
+}
+
+.tarefas-lista .tarefa-concluida {
+    text-decoration: line-through;
+    color: #47515aff;
+}
+
+.tarefas-lista form {
+    display: inline;
+}
+
+.tarefas-lista button.concluir {
+    padding: 0.25rem 0.5rem;
+    background-color: #00b32aff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tarefas-lista button.concluir:hover {
+    background-color: #008f22;
+}
+
+/* Mensagem quando não há tarefas */
+.sem-tarefas {
+    font-style: italic;
+    color: #777;
+}
