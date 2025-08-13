@@ -1,0 +1,109 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Arial;
+    background-color: #555555;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    background: rgb(8, 8, 8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(167, 40, 40, 1);
+}
+
+.form_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tarefa_container,
+.data_limite_container {
+    width: 70%;
+}
+
+h1 {
+    text-align: center;
+    color: #e6e6e6;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    font-weight: bold;
+    color: #e6e6e6;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px, solid, #e6e6e6;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    color: rgb(8, 8, 8);
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #a72828;
+    color: #e6e6e6;
+    border: none;
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: #882121;
+}
+
+p {
+    color: #e6e6e6;
+}
+
+table {
+    border: 2px solid #e6e6e6;
+    width: 70%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.table_head {
+    background-color: #882121;
+    color: #e6e6e6;
+}
+
+tr {
+    background-color: #e6e6e6;
+    border: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #aaaaaa;
+}
+
+th, td {
+    word-break: break-all;
+}
