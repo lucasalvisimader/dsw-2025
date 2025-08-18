@@ -26,9 +26,9 @@
         <!-- Input (html) -->
         {{ form.nome(class="form-control", placeholder="Digite seu nome") }}
         <!-- Tratamento de erros -->
-        {% if form.nome.erros %}
-            {% for error in form.nome.erros %}
-                <div>{{ error }}</div>
+        {% if form.nome.errors %}
+            {% for error in form.nome.errors %}
+                <div class="error-message">{{ error }}</div>
             {% endfor %}
         {% endif %}
 
@@ -37,9 +37,9 @@
         <!-- Input (html) -->
         {{ form.email(class="form-control", placeholder="exemplo@dominio.com") }}
         <!-- Tratamento de erros -->
-        {% if form.email.erros %}
-            {% for error in form.email.erros %}
-                <div>{{ error }}</div>
+        {% if form.email.errors %}
+            {% for error in form.email.errors %}
+                <div class="error-message">{{ error }}</div>
             {% endfor %}
         {% endif %}
 

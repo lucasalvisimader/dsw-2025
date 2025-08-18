@@ -11,8 +11,8 @@
     <p>Escolha uma das opções abaixo para ver os formulários em ação</p>
     <ul>
         <li><a href="{{ url_for("formulario") }}">Formulário em branco</a></li>
-        <li>Formulário preenchido (com argumentos)</li>
-        <li>Formulário preenchido (com objeto)</li>
+        <li><a href="{{ url_for('formulario_com_argumentos') }}">Formulário Preenchido (com Argumentos)</a></li>
+        <li><a href="{{ url_for('formulario_com_objeto') }}">Formulário Preenchido (com Objeto)</a></li>
     </ul>
 </body>
 </html>
