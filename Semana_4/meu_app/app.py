@@ -103,7 +103,6 @@ def formulario_registro():
         aceitar_termos = form.aceitar_termos.data
 
         if form.biografia:
-            biografia = form.biografia.data
             biografia_truncada = form.biografia.data[:50] + "..." if len(form.biografia.data) > 50 else form.biografia.data
             flash(f"Cadastro recebido para { nome }\n{ biografia_truncada }")
             return redirect(url_for("formulario_registro"))
