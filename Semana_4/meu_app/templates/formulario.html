@@ -43,6 +43,50 @@
             {% endfor %}
         {% endif %}
 
+        <!-- Label (html) -->
+        {{ form.senha.label }}
+        <!-- Input (html) -->
+        {{ form.senha(class="form-control", placeholder="Senha muito forte") }}
+        <!-- Tratamento de erros -->
+        {% if form.senha.errors %}
+            {% for error in form.senha.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Label (html) -->
+        {{ form.confirmar_senha.label }}
+        <!-- Input (html) -->
+        {{ form.confirmar_senha(class="form-control", placeholder="Confirme a sua senha muito forte") }}
+        <!-- Tratamento de erros -->
+        {% if form.confirmar_senha.errors %}
+            {% for error in form.confirmar_senha.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Label (html) -->
+        {{ form.biografia.label }}
+        <!-- Input (html) -->
+        {{ form.biografia(class="form-control", placeholder="Escreva uma breve biografia") }}
+        <!-- Tratamento de erros -->
+        {% if form.biografia.errors %}
+            {% for error in form.biografia.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Label (html) -->
+        {{ form.aceitar_termos.label }}
+        <!-- Input (html) -->
+        {{ form.aceitar_termos(class="form-control") }}
+        <!-- Tratamento de erros -->
+        {% if form.aceitar_termos.errors %}
+            {% for error in form.aceitar_termos.errors %}
+                <div class="error-message">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+
         <!-- Botão enviar submit (html) -->
         {{ form.submit(class="submit-btn") }}
         
