@@ -84,6 +84,34 @@ def formulario_via_argumentos():
         title="2. Fomulário com Argumentos"
     )
 
+@app.route("/via-objeto", methods=["GET", "POST"])
+def formulario_via_objeto():
+    form = ContatoForm()
+
+    # Resposta ao método POST
+    if form.validate_on_submit():
+        nome_usuario = form.nome.data
+        email_usuario = form.email.data
+        mensagem_usuario = form.mensagem.data
+        return render_template("sucesso.html", 
+                               nome_usuario=nome_usuario, 
+                               email_usuario=email_usuario, 
+                               mensagem_usuario=mensagem_usuario)
+    # Resposta ao método GET
+    elif not form.is_submitted():
+        usuario_mock = Usuario(
+            nome="Manoel", 
+            email="manoel123321@gmail.com", 
+            mensagem="Mensagem vinda via objeto"
+        )
+        form = ContatoForm(obj=usuario_mock)
+
+    return render_template(
+        "formulario.html",
+        form=form,
+        title="3. Fomulário por Objeto"
+    )
+
 # --- Execução da Aplicação ---
 if __name__ == '__main__':
     app.run(debug=True)
