@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ chef.nome }}</h2>
+    <p><strong>Especialidade:</strong> {{ chef.perfil.especialidade }}</p>
+    <p><strong>Anos de Experiência:</strong> {{ chef.perfil.anos_experiencia }}</p>
+    
+    <h3>Receitas:</h3>
+    <ul>
+        {% for receita in chef.receitas %}
+            <li>
+                {{ receita.titulo }}
+                <br> 
+                (Ingredientes: 
+                {% for ing in receita.ingredientes %}
+                    {{ ing.nome }}{% if not loop.last %}, {% endif %}
+                {% endfor %})
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

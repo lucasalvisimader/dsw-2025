@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Nova Receita</h2>
+    <form method="POST">
+        <label>Chef:</label>
+        <select name="chef_id" required>
+            {% for chef in chefs %}
+                <option value="{{ chef.id }}">{{ chef.nome }}</option>
+            {% endfor %}
+        </select>
+        
+        <label>Título:</label>
+        <input type="text" name="titulo" required>
+        
+        <label>Instruções:</label>
+        <textarea name="instrucoes" required></textarea>
+        
+        <label>Ingredientes (separados por vírgula):</label>
+        <input type="text" name="ingredientes" placeholder="Ex: Farinha, Ovos, Açúcar" required>
+        
+        <button type="submit">Criar Receita</button>
+    </form>
+{% endblock %}
